@@ -35,7 +35,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 app.use(expressSession({
-    secret: process.env.SECRET_KEY,
+    secret: "K HUNNURJI RAO",
     resave: true,
     saveUninitialized: true,
     cookie: { maxAge: 1000 * 60 * 5 }
