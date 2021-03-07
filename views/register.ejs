@@ -1,0 +1,108 @@
+<%- include('layouts/header.ejs'); -%>
+
+    <body>
+
+        <!-- Navigation -->
+        <%- include('layouts/navbar.ejs'); -%>
+
+            <!-- Page Header -->
+            <header class="masthead" style="background-image: url('img/register-bg.jpg')">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-10 mx-auto">
+                            <div class="page-heading">
+                                <h2>Register here!</h2>
+                                <span class="subheading">Welcome to our App</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+
+            <!-- Main Content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <p>Fill the details manually!</p>
+                        <% if(errors !=null && errors.length> 0){ %>
+                            <ul class="list-group"></ul>
+                            <% for (var i=0; i < errors.length; i++) { %>
+                                <li class="list-group-item list-group-item-danger">
+                                    <%= errors[i] %>
+                                </li>
+                                <% } %>
+                                    </ul>
+                                    <% } %>
+                                        <form action="/user/register" method="POST">
+                                            <div class="control-group">
+                                                <div class="form-group floating-label-form-group controls">
+                                                    <label>User Name</label>
+                                                    <input type="text" class="form-control" placeholder="User Name*"
+                                                        id="name" name="username" value="<%= username %>">
+                                                    <p class=" help-block text-danger"></p>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="control-group">
+                                <div class="form-group floating-label-form-group controls">
+                                    <label>Email Address</label>
+                                    <input type="email" class="form-control" placeholder="Email Address" id="email"
+                                        name="email">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div> -->
+                                            <div class="control-group">
+                                                <div class="form-group floating-label-form-group controls">
+                                                    <label>Password</label>
+                                                    <input type="password" class="form-control" placeholder="Password*"
+                                                        id="password" name="password" value="<%= username %>">
+                                                    <p class=" help-block text-danger"></p>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <div class="form-group floating-label-form-group controls">
+                                                    <label>Confirm Password</label>
+                                                    <input type="password" class="form-control"
+                                                        placeholder="Confirm Password*" id="Confirmpassword"
+                                                        name="confirmPassword">
+                                                    <p class="help-block text-danger"></p>
+                                                </div>
+                                            </div>
+                                            <div id="danger">
+
+                                            </div>
+                                            <br>
+                                            <div id="success"></div>
+                                            <button type="submit" class="btn btn-primary rounded"
+                                                id="sendMessageButton">Register</button>
+                                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Footer -->
+
+            <%- include('layouts/footer.ejs'); -%>
+                <%- include('layouts/scripts.ejs'); -%>
+
+                    <script>
+
+                        function validateForm(rand_num) {
+                            var x = document.getElementById("valCode").value;
+
+                            if (x == rand_num) {
+                                document.getElementById("link").href = "/";
+                            }
+                            else {
+                                alert("Enter a corret validation key!")
+                            }
+                            x.innerhtml = "";
+                        };
+                    </script>
+    </body>
+
+    </html>

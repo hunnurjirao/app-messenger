@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Messenger-App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='/https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+        type='/text/css'>
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='/text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="/css/clean-blog.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.2/socket.io.js"></script>
+    <link rel="stylesheet" href="/messenger_styles.css">
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+    <%- include('layouts/navbar.ejs'); -%>
+
+        <!-- Page Header -->
+        <header class="masthead" style="background-image: url('img/contact-bg.jpg')">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="post-heading">
+                            <h1>The Messenger</h1>
+                            <h1 class="subheading">Hello, <%= username%>
+                            </h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="mario-chat">
+            <h2>The Messenger</h2>
+            <div id="chat-window">
+                <div id="output"></div>
+                <div id="feedback"></div>
+            </div>
+
+            <!-- <input id="username" type="text" placeholder="Name" />  -->
+            <p id="username">
+                <%= username%>
+            </p>
+            <input id="message" type="text" placeholder="Message" />
+            <button id="send" type="submit">Send</button>
+        </div>
+
+
+        <script src="/chat.js"></script>
+        <!-- Footer -->
+
+        <%- include('layouts/footer.ejs'); -%>
+            <%- include('layouts/scripts.ejs'); -%>
+</body>
+
+</html>
