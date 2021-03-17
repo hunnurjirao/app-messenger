@@ -23,10 +23,11 @@ mongoose.connect(uri || 'mongodb://localhost/App_database', {
     useUnifiedTopology: true,
     useCreateIndex: true
 }).then(() => {
-    console.log("Database Connection Successful!");
+    console.log("App Database Connection Successful!");
 }).catch((err) => {
-    console.log("Database Connection Failed");
+    console.log("App Database Connection Failed");
 });
+
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
