@@ -15,7 +15,7 @@ const storeLoginController = require('./controllers/storeLogin');
 const authMiddleware = require('./middleware/authMiddleware');
 const redirectMiddleware = require('./middleware/redirect');
 
-const uri = "mongodb+srv://hunnurjirao:rajahunnur666@cluster0.ubnum.mongodb.net/App_database"
+const uri = "###"
 const port = process.env.PORT || 3600
 
 mongoose.connect(uri || 'mongodb://localhost/App_database', {
